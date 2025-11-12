@@ -1,0 +1,8 @@
+# Arquivos e diretórios gerados pelo Yocto/Kas
+build/
+build-*/
+downloads/
+sstate-cache/
+
+# Diretório interno do KAS
+.kas/

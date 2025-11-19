@@ -1,6 +1,3 @@
-
-# lê distância do sensor HC-SR04 usando GPIO e envia os dados via MQTT.
-
 #!/usr/bin/env python3
 import time
 import RPi.GPIO as GPIO
@@ -8,7 +5,7 @@ import paho.mqtt.client as mqtt
 
 TRIG = 23
 ECHO = 24
-BROKER = "localhost"    # altere para o  broker
+BROKER = "localhost"    # mosquitto e script rodam na rasp
 TOPIC = "sensor/distancia"
 
 GPIO.setmode(GPIO.BCM)
@@ -38,14 +35,13 @@ def read_distance():
     interval = stop - start
     return (interval * 34300) / 2
 
-# MQTT client
-client = mqtt.Client() # cria cliente
+client = mqtt.Client() # cria cliente MQTT
 
 def mqtt_connect():
     """Tenta conectar."""
     while True:
         try:
-            client.connect(BROKER, 1883, 60) # conecta ao broker do YOCTO
+            client.connect(BROKER, 1883, 60) # conecta ao broker
             client.loop_start()
             print("MQTT conectado.")
             break

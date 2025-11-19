@@ -8,7 +8,7 @@ SRC_URI = " \
     file://sensor.service \
 "
 
-# Dependências de runtime (o que precisa estar na imagem final)
+# Dependências de runtime 
 RDEPENDS:${PN} = "\
     python3-core \
     python3-paho-mqtt \
@@ -18,19 +18,15 @@ RDEPENDS:${PN} = "\
 # O que fazer durante a instalação
 do_install() {
 
-    # Criar o diretório no sistema de arquivos da imagem
     install -d ${D}${bindir}
     install -m 0755 ${WORKDIR}/sensor.py ${D}${bindir}/sensor.py
 
-    # Instalar Systemd unity
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/sensor.service ${D}${systemd_system_unitdir}/sensor.service
 
-    # Instalar nosso script e torná-lo executável
-   # install -m 0755 ${WORKDIR}/sensor.py ${D}${bindir}/
 }
 
 SYSTEMD_SERVICE:${PN} = "sensor.service"
 inherit systemd
-
+SYSTEMD_AUTO_ENABLE= "enable"
 FILES:${PN} += "${bindir} ${systemd_system_unitdir}"

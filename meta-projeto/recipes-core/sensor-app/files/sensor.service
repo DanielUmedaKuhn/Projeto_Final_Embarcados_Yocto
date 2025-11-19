@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/hcsr04.sensorpy
+ExecStart=/usr/bin/sensor.py
 Restart=always
 User=root
 

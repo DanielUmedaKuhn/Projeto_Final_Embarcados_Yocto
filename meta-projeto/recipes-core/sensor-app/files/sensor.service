@@ -1,0 +1,13 @@
+[Unit]
+Description=Sensor de distancia HC-SR04 com MQTT
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hcsr04.sensorpy
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

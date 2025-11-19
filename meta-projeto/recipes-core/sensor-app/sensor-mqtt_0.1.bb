@@ -20,7 +20,7 @@ do_install() {
 
     # Criar o diretório no sistema de arquivos da imagem
     install -d ${D}${bindir}
-    install -m 0755 ${WORKDIR}/hcsr04.py ${D}${bindir}/sensor.py
+    install -m 0755 ${WORKDIR}/sensor.py ${D}${bindir}/sensor.py
 
     # Instalar Systemd unity
     install -d ${D}${systemd_system_unitdir}

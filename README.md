@@ -135,6 +135,8 @@ Como servidor intermediário (broker) utilizamos o mosquitto que recebe as mensa
 
 Primeiro, criamos a camada Yocto meta project para encapsular o projeto e colocar a receita Python e systemd. 
 
+Além disso, criamos o arquivo sensor.py que faz a leitura da distancia do sensor ultrassônico HC-SR04 e publica via MQTT e o seviço sensor.service para inicializar automaticamente o código na Rasp.
+
 Depois, escrevemos a receita sensor-mqtt_01.bb, que define como se dará a build do aplicativo:  de onde vem os arquivos e sua empacotação no tempo de build, dependências de runtime, como instalar no rootfs,  integração com systemd, habilitação do serviço.
 
 Mesmo com a receita pronta, ela não é incluída automaticamente na imagem, para isso criamos o arquivo layer.conf que informa o Yocto que a receipe deve ser  parte da imagem final e instalada na rootfs. Essa ação é essencial para garantir que o script e o serviço façam parte do sistema final gravado no cartão SD.
@@ -142,3 +144,7 @@ Mesmo com a receita pronta, ela não é incluída automaticamente na imagem, par
 Com todos os componentes devidamente preparados, a imagem personalizada foi gerada usando o comando bitbake core-image-minimal, que construiu todo o ambiente Linux, instalou dependências, aplicou configurações, integrou o script, registrou o serviço e produziu a imagem final pronta para uso.
 
 A imagem gerada foi gravada no cartão SD e o Raspberry Pi 3B+ foi iniciado com o novo sistema. No boot, o serviço sensor.service foi automaticamente ativado pelo systemd, iniciando o script de leitura do HC-SR04, que começou a realizar as medições e publicar os dados no broker MQTT. 
+
+# **8. Video do teste realizado**
+
+https://github.com/user-attachments/assets/300d8e09-b527-4c74-a76f-45efeda0c12d

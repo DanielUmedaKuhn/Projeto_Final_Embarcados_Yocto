@@ -131,7 +131,7 @@ Primeiro, criamos a camada Yocto meta project para encapsular o projeto e coloca
 
 Depois, escrevemos a receita sensor-mqtt_01.bb, que define como se dará a build do aplicativo:  de onde vem os arquivos e sua empacotação no tempo de build, dependências de runtime, como instalar no rootfs,  integração com systemd, habilitação do serviço.
 
-Mesmo com a receita pronta, ela não é incluída automaticamente na imagem, para isso criamos o arquivo local.conf que informa o Yocto que a receipe deve ser  parte da imagem final e instalada na rootfs. Essa ação é essencial para garantir que o script e o serviço façam parte do sistema final gravado no cartão SD.
+Mesmo com a receita pronta, ela não é incluída automaticamente na imagem, para isso criamos o arquivo layer.conf que informa o Yocto que a receipe deve ser  parte da imagem final e instalada na rootfs. Essa ação é essencial para garantir que o script e o serviço façam parte do sistema final gravado no cartão SD.
 
 Com todos os componentes devidamente preparados, a imagem personalizada foi gerada usando o comando bitbake core-image-minimal, que construiu todo o ambiente Linux, instalou dependências, aplicou configurações, integrou o script, registrou o serviço e produziu a imagem final pronta para uso.
 

@@ -126,8 +126,11 @@ Como servidor intermediário (broker) utilizamos o mosquitto que recebe as mensa
   </tr>
 </table>
 
+# **6. Montagem**
 
-# **6. Caminhos Percorridos para a Implementação**
+![Image](https://github.com/user-attachments/assets/677c1a4f-d3f8-46ef-bb00-611eec997bc0)
+
+# **7. Caminhos Percorridos para a Implementação**
 
 Primeiro, criamos a camada Yocto meta project para encapsular o projeto e colocar a receita Python e systemd. 
 

@@ -128,7 +128,8 @@ Como servidor intermediário (broker) utilizamos o mosquitto que recebe as mensa
 
 # **6. Montagem**
 
-![Image](https://github.com/user-attachments/assets/677c1a4f-d3f8-46ef-bb00-611eec997bc0)
+<img src="https://github.com/user-attachments/assets/677c1a4f-d3f8-46ef-bb00-611eec997bc0" width="300" alt="Descrição da Imagem"/>
+
 
 # **7. Caminhos Percorridos para a Implementação**
 

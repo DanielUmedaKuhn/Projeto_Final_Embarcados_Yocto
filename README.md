@@ -1,5 +1,7 @@
 # **PROJETO DE SISTEMAS EMBARCADOS**
 
+Felipeh Arcanjo Gabriel 13678762
+Daniel Umeda Kuhn Nº USP: 13676541
 
 # **1. Introdução e Motivação**
 
